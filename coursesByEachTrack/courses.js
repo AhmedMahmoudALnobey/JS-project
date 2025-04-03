@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('courses.js loaded'); // Debug: Check if the script loads
+
     // Set the footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Get the selected track from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const selectedTrack = urlParams.get('track');
+    console.log('Selected Track:', selectedTrack); // Debug: Check the track
 
     // Update the header with the selected track
     const trackHeader = document.getElementById('trackHeader');
@@ -14,31 +17,175 @@ document.addEventListener('DOMContentLoaded', function() {
         trackHeader.textContent = 'Courses';
     }
 
-    // Define courses for each track
+    // Define courses for each track with additional details
     const coursesData = {
         'Software Fundamentals': [
-            { name: 'Introduction to Programming', description: 'Learn the basics of coding with Python. Perfect for beginners!' },
-            { name: 'Data Structures', description: 'Understand arrays, lists, and more to build efficient programs.' },
-            { name: 'Algorithms', description: 'Master problem-solving with key algorithms and techniques.' },
-            { name: 'Version Control with Git', description: 'Learn how to manage your code using Git and GitHub.' }
+            { 
+                name: 'Introduction to Programming', 
+                description: 'Learn the basics of coding with Python. Perfect for beginners!',
+                groupName: 'Group:1',
+                instructor: 'Ahmed',
+                startDate: '2024-01-15',
+                endDate: '2024-05-15',
+                numStudents: 5,
+                price: '150 $'
+            },
+            { 
+                name: 'Data Structures', 
+                description: 'Understand arrays, lists, and more to build efficient programs.',
+                groupName: 'Group:2',
+                instructor: 'Sara',
+                startDate: '2024-02-10',
+                endDate: '2024-06-10',
+                numStudents: 4,
+                price: '180 $'
+            },
+            { 
+                name: 'Algorithms', 
+                description: 'Master problem-solving with key algorithms and techniques.',
+                groupName: 'Group:3',
+                instructor: 'Mohamed',
+                startDate: '2024-03-01',
+                endDate: '2024-07-01',
+                numStudents: 3,
+                price: '200 $'
+            },
+            { 
+                name: 'Version Control with Git', 
+                description: 'Learn how to manage your code using Git and GitHub.',
+                groupName: 'Group:4',
+                instructor: 'Fatima',
+                startDate: '2024-04-01',
+                endDate: '2024-08-01',
+                numStudents: 6,
+                price: '120 $'
+            }
         ],
         'Power BI': [
-            { name: 'Power BI Basics', description: 'Get started with Power BI for data visualization.' },
-            { name: 'Data Modeling', description: 'Learn to create relationships and models in Power BI.' },
-            { name: 'DAX Fundamentals', description: 'Master Data Analysis Expressions for advanced calculations.' },
-            { name: 'Dashboard Design', description: 'Create stunning dashboards to present your data.' }
+            { 
+                name: 'Power BI Basics', 
+                description: 'Get started with Power BI for data visualization.',
+                groupName: 'Group:1',
+                instructor: 'Laila',
+                startDate: '2024-01-20',
+                endDate: '2024-05-20',
+                numStudents: 3,
+                price: '130 $'
+            },
+            { 
+                name: 'Data Modeling', 
+                description: 'Learn to create relationships and models in Power BI.',
+                groupName: 'Group:2',
+                instructor: 'Omar',
+                startDate: '2024-02-15',
+                endDate: '2024-06-15',
+                numStudents: 5,
+                price: '160 $'
+            },
+            { 
+                name: 'DAX Fundamentals', 
+                description: 'Master Data Analysis Expressions for advanced calculations.',
+                groupName: 'Group:3',
+                instructor: 'Nadia',
+                startDate: '2024-03-10',
+                endDate: '2024-07-10',
+                numStudents: 4,
+                price: '170 $'
+            },
+            { 
+                name: 'Dashboard Design', 
+                description: 'Create stunning dashboards to present your data.',
+                groupName: 'Group:4',
+                instructor: 'Khaled',
+                startDate: '2024-04-05',
+                endDate: '2024-08-05',
+                numStudents: 2,
+                price: '140 $'
+            }
         ],
         'MEARN': [
-            { name: 'MongoDB Basics', description: 'Learn to work with MongoDB for NoSQL databases.' },
-            { name: 'Express.js Essentials', description: 'Build RESTful APIs with Express.js.' },
-            { name: 'React for Beginners', description: 'Create dynamic UIs with React.' },
-            { name: 'Node.js Fundamentals', description: 'Understand server-side programming with Node.js.' }
+            { 
+                name: 'MongoDB Basics', 
+                description: 'Learn to work with MongoDB for NoSQL databases.',
+                groupName: 'Group:1',
+                instructor: 'Aisha',
+                startDate: '2024-01-25',
+                endDate: '2024-05-25',
+                numStudents: 4,
+                price: '150 $'
+            },
+            { 
+                name: 'Express.js Essentials', 
+                description: 'Build RESTful APIs with Express.js.',
+                groupName: 'Group:2',
+                instructor: 'Youssef',
+                startDate: '2024-02-20',
+                endDate: '2024-06-20',
+                numStudents: 3,
+                price: '160 $'
+            },
+            { 
+                name: 'React for Beginners', 
+                description: 'Create dynamic UIs with React.',
+                groupName: 'Group:3',
+                instructor: 'Hana',
+                startDate: '2024-03-15',
+                endDate: '2024-07-15',
+                numStudents: 5,
+                price: '180 $'
+            },
+            { 
+                name: 'Node.js Fundamentals', 
+                description: 'Understand server-side programming with Node.js.',
+                groupName: 'Group:4',
+                instructor: 'Ali',
+                startDate: '2024-04-10',
+                endDate: '2024-08-10',
+                numStudents: 2,
+                price: '140 $'
+            }
         ],
         'DEVOPS': [
-            { name: 'Introduction to DevOps', description: 'Understand the principles of DevOps and CI/CD.' },
-            { name: 'Docker Essentials', description: 'Learn containerization with Docker.' },
-            { name: 'Kubernetes Basics', description: 'Manage containerized apps with Kubernetes.' },
-            { name: 'CI/CD with Jenkins', description: 'Automate your deployment pipeline with Jenkins.' }
+            { 
+                name: 'Introduction to DevOps', 
+                description: 'Understand the principles of DevOps and CI/CD.',
+                groupName: 'Group:1',
+                instructor: 'Rania',
+                startDate: '2024-01-30',
+                endDate: '2024-05-30',
+                numStudents: 6,
+                price: '170 $'
+            },
+            { 
+                name: 'Docker Essentials', 
+                description: 'Learn containerization with Docker.',
+                groupName: 'Group:2',
+                instructor: 'Mahmoud',
+                startDate: '2024-02-25',
+                endDate: '2024-06-25',
+                numStudents: 4,
+                price: '150 $'
+            },
+            { 
+                name: 'Kubernetes Basics', 
+                description: 'Manage containerized apps with Kubernetes.',
+                groupName: 'Group:3',
+                instructor: 'Sami',
+                startDate: '2024-03-20',
+                endDate: '2024-07-20',
+                numStudents: 3,
+                price: '160 $'
+            },
+            { 
+                name: 'CI/CD with Jenkins', 
+                description: 'Automate your deployment pipeline with Jenkins.',
+                groupName: 'Group:4',
+                instructor: 'Leila',
+                startDate: '2024-04-15',
+                endDate: '2024-08-15',
+                numStudents: 5,
+                price: '180 $'
+            }
         ]
     };
 
@@ -47,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Populate courses for the selected track
     if (selectedTrack && coursesData[selectedTrack]) {
+        console.log('Populating courses for track:', selectedTrack); // Debug: Check if courses are being populated
         coursesData[selectedTrack].forEach(course => {
             const option = document.createElement('div');
             option.className = 'course-option';
@@ -95,6 +243,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.boxShadow = 'none';
                 title.style.color = '#191818';
                 description.style.color = '#333';
+            });
+
+            // Add click event to store course details in localStorage and redirect
+            option.addEventListener('click', function() {
+                console.log('Course clicked:', course.name); // Debug: Check if click event fires
+                // Store course details in localStorage
+                localStorage.setItem('selectedCourse', JSON.stringify(course));
+                console.log('localStorage set:', localStorage.getItem('selectedCourse')); // Debug: Check localStorage
+                // Redirect to course details page in the coursesDetails folder
+                try {
+                    window.location.href = `../coursesDetails/details.html?course=${encodeURIComponent(course.name)}`;
+                    console.log('Redirecting to:', `../coursesDetails/details.html?course=${encodeURIComponent(course.name)}`); // Debug: Log the redirection path
+                } catch (error) {
+                    console.error('Redirection failed:', error); // Debug: Catch redirection errors
+                }
             });
 
             courseOptions.appendChild(option);
