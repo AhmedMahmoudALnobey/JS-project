@@ -1,13 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('session.js loaded'); // Debug: Check if the script loads
-
-    // Set the footer year
+    console.log('session.js loaded');
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Get the course details from localStorage
     let selectedCourse = JSON.parse(localStorage.getItem('selectedCourse'));
-
-    // If localStorage is empty, use fallback data
     if (!selectedCourse) {
         console.log('No data in localStorage, using fallback data');
         selectedCourse = {
@@ -20,22 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '100 $'
         };
     }
-
-    // Get the session details container
     const sessionDetails = document.getElementById('sessionDetails');
     if (!sessionDetails) {
         console.error('sessionDetails element not found');
         return;
     }
-
-    // Populate session details
     if (selectedCourse) {
-        // Create header
         const sessionHeader = document.createElement('header');
         sessionHeader.innerHTML = `<h1>${selectedCourse.name}</h1>`;
         document.body.insertBefore(sessionHeader, document.querySelector('.container'));
-
-        // Create elements for each piece of information
         const groupName = document.createElement('p');
         groupName.textContent = `Group Name: ${selectedCourse.groupName}`;
         groupName.className = 'session-card';
@@ -82,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionButton.className = 'session-button';
         sessionButton.addEventListener('click', () => alert(`Starting session for ${selectedCourse.name}...`));
 
-        // Append all elements to the container
         sessionDetails.appendChild(groupName);
         sessionDetails.appendChild(examsContainer);
         sessionDetails.appendChild(startDate);
@@ -96,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionDetails.appendChild(fallback);
     }
 
-    // Apply styles
     function applyCardStyles(element) {
         element.style.background = '#F9F9F9';
         element.style.border = '1px solid #036AFF';
@@ -135,15 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Apply styles to session cards
+    
     const sessionCards = document.querySelectorAll('.session-card');
     sessionCards.forEach(applyCardStyles);
 
-    // Apply styles to session buttons
     const sessionButtons = document.querySelectorAll('.session-button');
     sessionButtons.forEach(applyButtonStyles);
-
-    // Apply global styles
     document.body.style.fontFamily = "'Circular Std', sans-serif";
     document.body.style.color = '#191818';
     document.body.style.margin = '0';
@@ -167,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     backgroundLayer.style.zIndex = '-1';
 
     const container = document.querySelector('.container');
-    container.style.maxWidth = '600px'; // Align with details page
+    container.style.maxWidth = '600px';
     container.style.width = '90%';
     container.style.margin = '40px auto';
     container.style.padding = '20px';
@@ -197,13 +179,5 @@ document.addEventListener('DOMContentLoaded', function() {
     footer.style.marginTop = 'auto';
     footer.style.fontSize = '14px';
     footer.style.boxShadow = '0 -2px 6px rgba(0, 0, 0, 0.1)';
-
-    // Responsive design
     const mediaQuery = window.matchMedia('(max-width: 600px)');
-    if (mediaQuery.matches) {
-        container.style.padding = '15px';
-        container.style.margin = '20px auto';
-        sessionDetailsContainer.style.textAlign = 'center';
-        sessionDetailsContainer.style.gridTemplateColumns = '1fr'; // Stack cards on small screens
-    }
 });

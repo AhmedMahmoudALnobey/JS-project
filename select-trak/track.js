@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const option = document.createElement('div');
         option.className = 'track-option';
         option.textContent = track;
-        
-        // Apply styles directly in JS (no CSS)
         option.style.background = 'rgba(255, 255, 255, 0.9)';
         option.style.border = '2px solid #036AFF';
         option.style.borderRadius = '8px';
@@ -63,8 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // Apply styles to other elements in JS
     document.body.style.fontFamily = "'Circular Std', sans-serif";
     document.body.style.color = '#191818';
     document.body.style.margin = '0';

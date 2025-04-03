@@ -1,15 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('details.js loaded'); // Debug: Check if the script loads
-
-    // Set the footer year
+    console.log('details.js loaded');
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Get the course details from localStorage
     let selectedCourse = JSON.parse(localStorage.getItem('selectedCourse'));
-
-    // If localStorage is empty, use fallback data
     if (!selectedCourse) {
-        console.log('No data in localStorage, using fallback data'); // Debug: Check if fallback is used
+        console.log('No data in localStorage, using fallback data');
         selectedCourse = {
             name: 'Sample Course',
             groupName: 'Group:Sample',
@@ -19,24 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
             numStudents: 3,
             price: '100 $'
         };
-        // Optionally, store the fallback data in localStorage for the next page
         localStorage.setItem('selectedCourse', JSON.stringify(selectedCourse));
     }
-
-    // Update the header with the course name
     const courseHeader = document.getElementById('courseHeader');
     if (selectedCourse && selectedCourse.name) {
         courseHeader.textContent = selectedCourse.name;
     } else {
         courseHeader.textContent = 'Course Details';
     }
-
-    // Get the course details container
     const courseDetails = document.getElementById('courseDetails');
-
-    // Populate course details
     if (selectedCourse) {
-        // Create elements for each piece of information
         const groupName = document.createElement('p');
         groupName.textContent = `Group Name: ${selectedCourse.groupName}`;
         groupName.style.margin = '10px 0';
@@ -47,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         instructor.textContent = `Instructor Name: ${selectedCourse.instructor}`;
         instructor.style.margin = '10px 0';
         instructor.style.fontSize = '16px';
-        instructor.style.color = '#FF0000'; // Red color for instructor name like in the image
+        instructor.style.color = '#FF0000';
 
         const startDate = document.createElement('p');
         startDate.textContent = `Start Date: ${selectedCourse.startDate}`;
@@ -73,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         price.style.fontSize = '16px';
         price.style.color = '#333';
 
-        // Create the Enroll button
         const enrollButton = document.createElement('button');
         enrollButton.textContent = 'Enroll';
         enrollButton.style.backgroundColor = '#036AFF';
@@ -97,17 +82,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         enrollButton.addEventListener('click', function() {
-            // Ensure the course data is in localStorage
             localStorage.setItem('selectedCourse', JSON.stringify(selectedCourse));
-            // Redirect to the session page
             try {
                 window.location.href = '../sessionDetails/session.html';
             } catch (error) {
-                console.error('Redirection to session page failed:', error); // Debug: Catch redirection errors
+                console.error('Redirection to session page failed:', error);
             }
         });
 
-        // Append all elements to the container
+    
         courseDetails.appendChild(groupName);
         courseDetails.appendChild(instructor);
         courseDetails.appendChild(startDate);
@@ -116,13 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
         courseDetails.appendChild(price);
         courseDetails.appendChild(enrollButton);
     } else {
-        // Fallback if no course is selected
+
         const fallback = document.createElement('p');
         fallback.textContent = 'No course selected. Please go back and select a course.';
         courseDetails.appendChild(fallback);
     }
 
-    // Apply styles to other elements in JS
     document.body.style.fontFamily = "'Circular Std', sans-serif";
     document.body.style.color = '#191818';
     document.body.style.margin = '0';
@@ -173,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const courseDetailsElements = courseDetailsContainer.children;
     Array.from(courseDetailsElements).forEach(detail => {
-        detail.style.background = '#F9F9F9'; // Light background
+        detail.style.background = '#F9F9F9';
         detail.style.border = '1px solid #036AFF';
         detail.style.borderRadius = '10px';
         detail.style.padding = '15px';

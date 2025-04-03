@@ -1,23 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('courses.js loaded'); // Debug: Check if the script loads
-
-    // Set the footer year
+    console.log('courses.js loaded');
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Get the selected track from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const selectedTrack = urlParams.get('track');
-    console.log('Selected Track:', selectedTrack); // Debug: Check the track
-
-    // Update the header with the selected track
+    console.log('Selected Track:', selectedTrack);
     const trackHeader = document.getElementById('trackHeader');
     if (selectedTrack) {
         trackHeader.textContent = `Courses for ${selectedTrack}`;
     } else {
         trackHeader.textContent = 'Courses';
     }
-
-    // Define courses for each track with additional details
     const coursesData = {
         'Software Fundamentals': [
             { 
@@ -188,13 +180,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ]
     };
-
-    // Get the course options container
     const courseOptions = document.getElementById('courseOptions');
-
-    // Populate courses for the selected track
     if (selectedTrack && coursesData[selectedTrack]) {
-        console.log('Populating courses for track:', selectedTrack); // Debug: Check if courses are being populated
+        console.log('Populating courses for track:', selectedTrack);
         coursesData[selectedTrack].forEach(course => {
             const option = document.createElement('div');
             option.className = 'course-option';
@@ -207,9 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             option.appendChild(title);
             option.appendChild(description);
-
-            // Apply styles to the course card
-            option.style.background = '#E6F4EA'; // Light green background like in the image
+            option.style.background = '#E6F4EA';
             option.style.border = '2px solid #036AFF';
             option.style.borderRadius = '8px';
             option.style.padding = '20px';
@@ -225,8 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
             description.style.margin = '0';
             description.style.fontSize = '14px';
             description.style.color = '#333';
-
-            // Hover effects
             option.addEventListener('mouseover', function() {
                 this.style.background = '#036AFF';
                 this.style.color = 'white';
@@ -244,32 +228,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 title.style.color = '#191818';
                 description.style.color = '#333';
             });
-
-            // Add click event to store course details in localStorage and redirect
             option.addEventListener('click', function() {
-                console.log('Course clicked:', course.name); // Debug: Check if click event fires
-                // Store course details in localStorage
+                console.log('Course clicked:', course.name);
                 localStorage.setItem('selectedCourse', JSON.stringify(course));
-                console.log('localStorage set:', localStorage.getItem('selectedCourse')); // Debug: Check localStorage
-                // Redirect to course details page in the coursesDetails folder
+                console.log('localStorage set:', localStorage.getItem('selectedCourse'));
                 try {
                     window.location.href = `../coursesDetails/details.html?course=${encodeURIComponent(course.name)}`;
-                    console.log('Redirecting to:', `../coursesDetails/details.html?course=${encodeURIComponent(course.name)}`); // Debug: Log the redirection path
                 } catch (error) {
-                    console.error('Redirection failed:', error); // Debug: Catch redirection errors
+                    console.error('Redirection failed:', error);
                 }
             });
 
             courseOptions.appendChild(option);
         });
     } else {
-        // Fallback if no track is selected or track is invalid
         const fallback = document.createElement('p');
         fallback.textContent = 'Please select a track to view courses.';
         courseOptions.appendChild(fallback);
     }
-
-    // Apply styles to other elements in JS
     document.body.style.fontFamily = "'Circular Std', sans-serif";
     document.body.style.color = '#191818';
     document.body.style.margin = '0';
