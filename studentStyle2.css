@@ -1,0 +1,50 @@
+/* @font-face {
+    font-family: 'Circular Std';
+    src: url('/fonts/CircularStd-Medium.woff2') format('woff2'),
+         url('/fonts/CircularStd-Medium.woff') format('woff'),
+         url('/fonts/CircularStd-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+
+body {
+    /* font-family:"Circular Std"; */
+    font-family: 'arista', sans-serif;
+
+    direction: ltr;
+    text-align: left;
+    background-color: #f4f4f4;
+}
+
+.profile-container {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    margin: 10px 0;
+    font-size: 18px;
+}
+#student-image{
+    width: 150px;
+}
+button {
+    background-color: #8B2EF5;
+    /* background-color: #007bff; */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #a963f9;
+    /* background-color: #0056b3; */
+}

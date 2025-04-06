@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Circular Std';
+    src: 
+         /* url('../fonts/circular-std/CircularStd-Medium.woff2') format('woff2'), */
+         url('../fonts/circular-std/CircularStd-Medium.woff') format('woff'),
+         url('../fonts/circular-std/CircularStd-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 
+   #8B2EF5  PURPLE
+   #F5F5F5  OFFWHITE
+   #036AFF  BLUE
+   #191818  BLACK
+*/
+
+
+body {
+    font-family: 'circular std', sans-serif;
+    font-size: large;
+
+    direction: ltr;
+    text-align: left;
+    background-color: #f4f4f4;
+}
+
+button {
+    background-color: #8B2EF5;
+    font
+    /* background-color: #007bff; */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+.profile-image-div{
+    /* display: flex;  */
+    /* justify-content: right;
+    align-items: 0; */
+    /* margin-bottom: 20px;  */
+    position: absolute;
+    top: 10%; 
+    right: 10%;
+    text-align: center;
+}
+
+#profile-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* object-fit: cover; */
+    border: 5px outset  #d2d0d5;
+    /* border-style: ; */
+    display: block;
+}
+
+#edit-profile-picture-btn{
+    /* display:block ; */
+    /* position: fixed;
+    top: 10px; */
+    /* height: 10px; */
+    margin:30px auto ;
+    
+}
+
+.profile-container {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    /* height: 80%; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#profile-info-container{
+    margin: 200px auto;
+}
+.profile-info {
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+#edit-profile{
+    margin: 70px auto;
+}
+
+
+
+
+
+.profile-image button{
+    /* display: block; */
+    /* display: inline-block; */
+}
+
+
+
+button:hover {
+    background-color: #a963f9;
+    /* background-color: #0056b3; */
+}
+
