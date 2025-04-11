@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Circular Std';
+    src: 
+        url('../../fonts/circular-std/CircularStd-Black.woff') format('woff'),
+        url('../../fonts/circular-std/CircularStd-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'circular std', sans-serif;
+    font-size: large;
+    direction: ltr;
+    text-align: left;
+    /* background: linear-gradient(120deg, #ed10de 0%, #9405e7 100%); */
+    background: linear-gradient(120deg, #eb3980 0%, #9405e7 100%);
+}
+
+.profile-container {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(224, 6, 6, 0.1);
+    /* box-shadow: 100px 200px 1000px rgb(84, 1, 55); */
+}
+
+#edit-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.profile-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-info label {
+    display: block;
+    color: #9405e7;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.edit-input {
+    width: 100%;
+    box-sizing: border-box;;
+    padding: 0.8rem ;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.edit-input:focus {
+    outline: none;
+    border-color: #ed10de;
+    box-shadow: 0 0 10px rgba(237, 16, 222, 0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.button-group button {
+    flex: 1;
+    background: linear-gradient(120deg, #ed10de 0%, #9405e7 100%);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-group button:hover {
+    background: linear-gradient(120deg, #ff22f0 0%, #c990ea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 16, 222, 0.3);
+}
+
+#cancel-edit {
+    background: linear-gradient(120deg, #6d2222 0%, #a30303 100%);
+}
+
+#cancel-edit:hover {
+    background: linear-gradient(120deg, #d03a3a 0%, #d82d2d 100%);
+}
+
+h1 {
+    text-align: center;
+    color: #9405e7;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}

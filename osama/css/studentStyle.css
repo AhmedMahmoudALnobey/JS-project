@@ -2,8 +2,9 @@
     font-family: 'Circular Std';
     src: 
          /* url('../fonts/circular-std/CircularStd-Medium.woff2') format('woff2'), */
-         url('../fonts/circular-std/CircularStd-Medium.woff') format('woff'),
-         url('../fonts/circular-std/CircularStd-Medium.ttf') format('truetype');
+         /* url('../fonts/circular-std/CircularStd-Medium.woff') format('woff'), */
+         url('../../fonts/circular-std/CircularStd-Black.woff') format('woff'),
+         url('../../fonts/circular-std/CircularStd-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -76,7 +77,7 @@ button {
     width: 80%;
     /* height: 80%; */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(224, 6, 6, 0.1);
 }
 
 #profile-info-container{
@@ -108,7 +109,7 @@ button:hover {
 }
 
 
-/* ... existing styles ... */
+
 
 .profile-info {
     margin-bottom: 1.5rem;
@@ -151,7 +152,7 @@ button:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the edit profile button */
+
 button {
     /* margin-top: 2rem; */
     background: linear-gradient(120deg, #ed10de 0%, #9405e7 100%);

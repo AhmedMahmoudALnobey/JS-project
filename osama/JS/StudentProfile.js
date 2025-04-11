@@ -22,9 +22,10 @@ let myProfileh1=document.getElementsByTagName("h1")[0];
 welcomeDiv.style.margin="0 auto";
 // welcomeMsg.style.color="#8B2EF5";
 studentNameLabel.style.color="#8B2EF5";
-studentNameLabel.style.borderBottom="5px solid #8B2EF5";
+studentNameLabel.style.borderBottom="3px solid #8B2EF5";
 welcomeMsg.style.borderBottom="5px solid #8B2EF5";
-welcomeMsg.textContent="Welcome Back : ";
+welcomeMsg.textContent = "👋 Welcome Back : ";
+// welcomeMsg.textContent="Welcome Back : ";
 studentNameLabel.style.display="inline";
 // myProfileh1.style.color="#8B2EF5";
 welcomeMsg.style.display="inline";
@@ -43,11 +44,12 @@ studentNameLabel.style.marginLeft = "10px";
 
 // welcomeMsg.textContent = "👋 Welcome Back : ";
 // welcomeMsg.style.fontWeight = "600";
-// welcomeMsg.style.padding = "5px 15px";
+welcomeMsg.style.padding = "5px 15px";
 // welcomeMsg.style.background = "linear-gradient(120deg, #ed10de 0%, #9405e7 100%)";
+welcomeMsg.style.color = " #9405e7 ";
 // welcomeMsg.style.color = "white";
-// welcomeMsg.style.borderRadius = "20px";
-// welcomeMsg.style.marginRight = "10px";
+welcomeMsg.style.borderRadius = "10px";
+welcomeMsg.style.marginRight = "10px";
 // welcomeMsg.style.boxShadow = "0 2px 10px rgba(237, 16, 222, 0.3)";
 
 
@@ -231,32 +233,41 @@ function UpdateProfilePictureEvent(){
 
 
 // Edit Profile Info
+// function editProfileInfo(){
+//     loadStudents();
+//     const student = getLoggedStudent();
+//     if(student){
+//         let newFName=prompt("Enter new First Name",student.fName);
+//         let newLName=prompt("Enter new Last Name",student.lName);
+//         let newEmail=prompt("Enter new Email",student.email);
+//         let newTrack=prompt("Enter new Track",student.track);
+
+//         let updated=false;
+//         if(newFName){student.fName=newFName; updated=true;}
+//         if(newLName){student.lName=newLName; updated=true;}
+//         if(newEmail){student.email=newEmail; updated=true;}
+//         if(newTrack){student.track=newTrack; updated=true;}
+
+//             if(updated){
+//                 let index=students.findIndex(s=>s.id===student.id);
+//                 if(index!==-1){
+//                     students[index]=student;
+//                     localStorage.setItem("loggedStudent",JSON.stringify(student)); // Update session data
+//                     saveStudents();  // Update Students in Local Storage
+//                     viewProfileInfo();
+//                     console.log("Profile updated successfully");
+//                  }
+//                 updateLoggedStudent(student);
+//             }
+//     }
+// }
+
 function editProfileInfo(){
-    loadStudents();
     const student = getLoggedStudent();
-    if(student){
-        let newFName=prompt("Enter new First Name",student.fName);
-        let newLName=prompt("Enter new Last Name",student.lName);
-        let newEmail=prompt("Enter new Email",student.email);
-        let newTrack=prompt("Enter new Track",student.track);
-
-        let updated=false;
-        if(newFName){student.fName=newFName; updated=true;}
-        if(newLName){student.lName=newLName; updated=true;}
-        if(newEmail){student.email=newEmail; updated=true;}
-        if(newTrack){student.track=newTrack; updated=true;}
-
-            if(updated){
-                let index=students.findIndex(s=>s.id===student.id);
-                if(index!==-1){
-                    students[index]=student;
-                    localStorage.setItem("loggedStudent",JSON.stringify(student)); // Update session data
-                    saveStudents();  // Update Students in Local Storage
-                    viewProfileInfo();
-                    console.log("Profile updated successfully");
-                 }
-                updateLoggedStudent(student);
-            }
+    if (student) {
+        window.location.href = '../html/edit.html';
+    } else {
+        console.log("No logged in student found");
     }
 }
 
