@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="icon" href="media/back-01.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <a href="#">E-learning</a>
+    </div>
+
+    <div class="buttom">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="login.html">Log in </a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <section class="slagon">
+      <img src="media/back-01.png" alt="web site logo" class="images" />
+    </section>
+    <section class="forms">
+      <h1>Registration</h1>
+      <form id="form">
+        <div class="input-box">
+          <span class="error" id="err-name"></span>
+          <input type="text" name="fName" id="fName" placeholder="Full Name" />
+          <div class="icon">
+            <label for="fName"><i class="fa-solid fa-user"></i></label>
+          </div>
+        </div>
+        <div class="input-box">
+          <span class="error" id="err-user"></span>
+          <input type="text" name="uName" id="uName" placeholder="User Name" />
+          <div class="icon">
+            <label for="uName"><i class="fa-solid fa-user"></i></label>
+          </div>
+        </div>
+        <div class="input-box">
+          <span class="error" id="err-email"></span>
+          <input type="email" name="eMail" id="eMail" placeholder="Email" />
+          <div class="icon">
+            <label for="eMail"><i class="fa-solid fa-envelope"></i></label>
+          </div>
+        </div>
+        <div class="input-box">
+          <span class="error" id="err-pass"></span>
+          <input type="password" name="password" id="password" placeholder="password" />
+          <div class="icon">
+            <label for="password"><i class="fa-solid fa-lock"></i></label>
+          </div>
+        </div>
+        <div class="input-box">
+          <span class="error" id="err-rpass"></span>
+          <input type="password" name="rPassword" id="rPassword" placeholder="Confirm Password" />
+          <div class="icon">
+            <label for="password"><i class="fa-solid fa-lock"></i></label>
+          </div>
+        </div>
+        <div class="select-box">
+          <span   id="err-gender"></span>
+          <select id="gender" name="gender">
+            <option value="">--select your gender--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="select-box" class="error">
+          <span  id="err-role"></span>
+          <select id="user-role" name="user-role">
+            <option value="">--,choose your role(student/teacher)--</option>
+            <option value="student">student</option>
+            <option value="teacher">teacher</option>
+          </select>
+        </div>
+        <div class="btn">
+          <button type="submit" id="submit">Sign Up</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>
