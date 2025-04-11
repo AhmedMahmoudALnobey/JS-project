@@ -31,6 +31,30 @@ welcomeMsg.style.display="inline";
 welcomeDiv.style.textAlign="center";
 // welcomeDiv.style.display="inline-block";
 
+//*!
+studentNameLabel.style.fontWeight = "600";
+studentNameLabel.style.padding = "5px 15px";
+studentNameLabel.style.background = "linear-gradient(120deg, #ed10de 0%, #9405e7 100%)";
+studentNameLabel.style.color = "white";
+studentNameLabel.style.borderRadius = "20px";
+studentNameLabel.style.marginLeft = "10px";
+//*!
+// ... existing code ...
+
+// welcomeMsg.textContent = "👋 Welcome Back : ";
+// welcomeMsg.style.fontWeight = "600";
+// welcomeMsg.style.padding = "5px 15px";
+// welcomeMsg.style.background = "linear-gradient(120deg, #ed10de 0%, #9405e7 100%)";
+// welcomeMsg.style.color = "white";
+// welcomeMsg.style.borderRadius = "20px";
+// welcomeMsg.style.marginRight = "10px";
+// welcomeMsg.style.boxShadow = "0 2px 10px rgba(237, 16, 222, 0.3)";
+
+
+//*!
+
+
+// ... existing code ...
 
 //
 // studentNameLabel.textContent=getLoggedStudent?getLoggedStudent.fName+" "+getLoggedStudent.lName:"Guest";
@@ -224,13 +248,13 @@ function editProfileInfo(){
 
             if(updated){
                 let index=students.findIndex(s=>s.id===student.id);
-                // if(index!==-1){
-                //     students[index]=student;
-                //     localStorage.setItem("loggedStudent",JSON.stringify(student)); // Update session data
-                //     saveStudents();  // Update Students in Local Storage
-                //     viewProfileInfo();
-                //     console.log("Profile updated successfully");
-                //  }
+                if(index!==-1){
+                    students[index]=student;
+                    localStorage.setItem("loggedStudent",JSON.stringify(student)); // Update session data
+                    saveStudents();  // Update Students in Local Storage
+                    viewProfileInfo();
+                    console.log("Profile updated successfully");
+                 }
                 updateLoggedStudent(student);
             }
     }
@@ -248,7 +272,7 @@ function editProfileInfoEvent(){
 }
 
 
-// Load Profile Info for logged student via DOMContent Loader  (بيشتغل مباشرة مع تحميل الصفحة زى ال onload ())
+// Load Profile Info for logged student 
 document.addEventListener("DOMContentLoaded", viewProfileInfo)
 
 
@@ -267,7 +291,7 @@ viewProfileInfo();
 // console.log(viewProfileInfo());
 
 
-// l
+// 
 
 
 

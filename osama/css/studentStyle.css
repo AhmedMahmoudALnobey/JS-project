@@ -19,15 +19,16 @@
 body {
     font-family: 'circular std', sans-serif;
     font-size: large;
-
     direction: ltr;
     text-align: left;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
+    background: linear-gradient(120deg, #ed10de 0%, #9405e7 100%);
+
 }
 
 button {
     background-color: #8B2EF5;
-    font
+    font-size: medium;
     /* background-color: #007bff; */
     color: white;
     padding: 10px;
@@ -106,3 +107,65 @@ button:hover {
     /* background-color: #0056b3; */
 }
 
+
+/* ... existing styles ... */
+
+.profile-info {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.profile-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-info label {
+    display: block;
+    color: #9405e7;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.profile-info span {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #ed10de;
+}
+
+#profile-info-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the edit profile button */
+button {
+    /* margin-top: 2rem; */
+    background: linear-gradient(120deg, #ed10de 0%, #9405e7 100%);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(120deg, #ff22f0 0%, #c990ea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 16, 222, 0.3);
+}

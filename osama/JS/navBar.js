@@ -213,7 +213,8 @@
 // Navbar Container
 const navBar = document.createElement("div");
 Object.assign(navBar.style, {
-  backgroundColor: "#8B2EF5",
+  // backgroundColor:"#8B2EF5",
+  background: "linear-gradient(240deg, #ed10de 0%, #8B2EF5 100%)",  
   padding: "15px 30px",
   display: "flex",
   justifyContent: "space-between",
