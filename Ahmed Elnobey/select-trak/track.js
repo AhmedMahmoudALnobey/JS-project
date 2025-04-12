@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         option.style.cursor = 'pointer';
         option.style.transition = 'all 0.3s';
         option.style.fontSize = '18px';
-        option.style.backdropFilter = 'blur(2px)';
+
 
         option.addEventListener('mouseover', function() {
             this.style.background = '#036AFF';
@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!this.classList.contains('selected')) {
                 this.style.background = 'rgba(255, 255, 255, 0.9)';
                 this.style.color = '#191818';
-                this.style.transform = 'none';
-                this.style.boxShadow = 'none';
             }
         });
 
@@ -68,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.minHeight = '100vh';
     document.body.style.display = 'flex';
     document.body.style.flexDirection = 'column';
-    document.body.style.position = 'relative';
 
     const backgroundLayer = document.querySelector('.background-layer');
     backgroundLayer.style.position = 'fixed';

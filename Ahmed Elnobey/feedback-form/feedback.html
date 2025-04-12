@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITI eLearning - feedback Form</title>
+    <link href="https://fonts.cdnfonts.com/css/circular-std" rel="stylesheet">
+    <link rel="icon" href="https://identity.iti.gov.eg/images/ITI%20logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="background-layer"></div>
+    <header>
+        <h1>feed-Back Form </h1>
+    </header>
+    <div class="container">
+        <h2>We Value Your Feedback</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select a rating</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+                <span class="error" id="ratingError"></span>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" placeholder="Share your thoughts" rows="5" required></textarea>
+                <span class="error" id="feedbackError"></span>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="successMessage" style="display: none; color: green; margin-top: 20px;">
+            Thank you for your feedback!
+        </div>
+    </div>
+
+    <footer>
+         <span id="year"></span> ITI eLearning
+    </footer>
+    <script src="./feedback.js"></script>
+</body>
+</html>
