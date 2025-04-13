@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
     backgroundLayer.style.zIndex = '-1';
 
     const header = document.querySelector('header');
-    header.style.backgroundColor = '#036AFF';
+    // header.style.backgroundColor = '#036AFF';
+    header.style.backgroundImage = 'linear-gradient(120deg, #ed10de 0%, #9405e7 100%)';
     header.style.color = 'white';
     header.style.padding = '20px';
     header.style.textAlign = 'center';

@@ -40,9 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const viewExamsButton = document.createElement("button");
     viewExamsButton.textContent = "View Exams";
     viewExamsButton.className = "session-button";
-    viewExamsButton.addEventListener("click", () =>
-      alert("Viewing exams for this course...")
-    );
+    viewExamsButton.addEventListener("click", () => {
+      localStorage.setItem("examCourse", selectedCourse.name);
+      window.location.href = "./exam.html";
+    });
 
     examsContainer.appendChild(examsLabel);
     examsContainer.appendChild(viewExamsButton);
@@ -69,21 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
     videoPlaceholder.className = "session-card";
     videoPlaceholder.setAttribute("title", "Video placeholder");
 
-    const sessionButton = document.createElement("button");
-    sessionButton.textContent = `Session ${selectedCourse.name}`;
-    sessionButton.className = "session-button";
-    sessionButton.addEventListener("click", () =>
-      alert(`Starting session for ${selectedCourse.name}...`)
-    );
-
     sessionDetails.appendChild(groupName);
     sessionDetails.appendChild(examsContainer);
     sessionDetails.appendChild(startDate);
     sessionDetails.appendChild(endDate);
     sessionDetails.appendChild(onlineVideo);
     sessionDetails.appendChild(videoPlaceholder);
-    sessionDetails.appendChild(sessionButton);
 
+    
     const feedbackButton = document.createElement("button");
     feedbackButton.textContent = "Give Feedback";
     feedbackButton.className = "session-button";
@@ -199,4 +193,11 @@ document.addEventListener("DOMContentLoaded", function () {
   footer.style.fontSize = "14px";
   footer.style.boxShadow = "0 -2px 6px rgba(0, 0, 0, 0.1)";
   const mediaQuery = window.matchMedia("(max-width: 600px)");
+
+  const header = document.querySelector('header');
+  header.style.backgroundImage = 'linear-gradient(120deg, #ed10de 0%, #9405e7 100%)';
+  header.style.color = 'white';
+  header.style.padding = '20px';
+  header.style.textAlign = 'center';
+  header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
 });

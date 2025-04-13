@@ -20,7 +20,8 @@ backgroundLayer.style.opacity = '0.1';
 backgroundLayer.style.zIndex = '-1';
 
 const header = document.querySelector('header');
-header.style.backgroundColor = 'rgba(3, 106, 255, 0.9)';
+// header.style.backgroundColor = 'rgba(3, 106, 255, 0.9)';
+header.style.backgroundImage = 'linear-gradient(120deg, #ed10de 0%, #9405e7 100%)';
 header.style.color = 'white';
 header.style.padding = '20px';
 header.style.textAlign = 'center';
@@ -100,10 +101,10 @@ errorSpans.forEach(span => {
 document.getElementById('feedbackForm').addEventListener('submit', function (event) {
     event.preventDefault();
     document.querySelectorAll('.error').forEach(span => span.textContent = '');
-    const name = document.getElementById('name').value();
-    const email = document.getElementById('email').value();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
     const rating = document.getElementById('rating').value;
-    const feedback = document.getElementById('feedback').value();
+    const feedback = document.getElementById('feedback').value;
     let isValid = true;
     if (!name) {
         document.getElementById('nameError').textContent = 'Name is required';
@@ -144,6 +145,8 @@ document.getElementById('feedbackForm').addEventListener('submit', function (eve
             document.getElementById('successMessage').style.display = 'none';
         }, 3000);
     }
+
+    window.location.href = '../sessionDetails/session.html';
 });
 
 function isValidEmail(email) {
