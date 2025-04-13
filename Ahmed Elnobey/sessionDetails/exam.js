@@ -281,24 +281,5 @@ document.addEventListener("DOMContentLoaded", function () {
   const sessionButtons = document.querySelectorAll(".session-button");
   sessionButtons.forEach(applyButtonStyles);
 
-  // Responsive adjustments
-  const mediaQuery = window.matchMedia("(max-width: 600px)");
-  function handleResponsive(e) {
-    if (e.matches) {
-      container.style.padding = "15px";
-      questionCards.forEach((card) => {
-        card.style.padding = "15px";
-      });
-      labels.forEach((label) => {
-        label.style.padding = "8px";
-        label.querySelector("span").style.fontSize = "14px";
-      });
-      sessionButtons.forEach((button) => {
-        button.style.padding = "10px 20px";
-        button.style.fontSize = "14px";
-      });
-    }
-  }
-  mediaQuery.addListener(handleResponsive);
-  handleResponsive(mediaQuery);
+
 });

@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
     header.style.color = 'white';
     header.style.padding = '20px';
     header.style.textAlign = 'center';
-    header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
 
     const container = document.querySelector('.container');
     container.style.maxWidth = '800px';
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     container.style.flex = '1';
     container.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
     container.style.borderRadius = '10px';
-    container.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+   
 
     const trackOptionsContainer = document.getElementById('trackOptions');
     trackOptionsContainer.style.display = 'flex';
@@ -109,4 +108,41 @@ document.addEventListener('DOMContentLoaded', function() {
     footer.style.backgroundColor = 'rgba(25, 24, 24, 0.9)';
     footer.style.color = 'white';
     footer.style.marginTop = 'auto';
+
+    const navbar = document.querySelector(".navbar");
+    const navbarContainer = document.querySelector(".navbar-container");
+    const navbarLogo = document.querySelector(".navbar-logo");
+    const navbarLinks = document.querySelector(".navbar-links");
+    const navLinks = document.querySelectorAll(".nav-link");
+  
+    navbar.style.backgroundColor = "rgba(3, 106, 255, 0.9)";
+    navbar.style.color = "white";
+    navbar.style.padding = "10px 0";
+    navbar.style.position = "sticky";
+    navbar.style.top = "0";
+    navbar.style.zIndex = "1000";
+    navbar.style.fontFamily = "'Circular Std', sans-serif";
+  
+    navbarContainer.style.maxWidth = "1200px";
+    navbarContainer.style.margin = "0 auto";
+    navbarContainer.style.display = "flex";
+    navbarContainer.style.alignItems = "center";
+    navbarContainer.style.justifyContent = "space-between";
+    navbarContainer.style.padding = "0 20px";
+  
+    navbarLogo.style.fontSize = "20px";
+    navbarLogo.style.fontWeight = "bold";
+    navbarLogo.style.color = "white";
+    navbarLogo.style.textDecoration = "none";
+  
+    navbarLinks.style.display = "flex";
+    navbarLinks.style.gap = "15px";
+  
+    navLinks.forEach((link) => {
+        link.style.color = "white";
+        link.style.textDecoration = "none";
+        link.style.fontSize = "16px";
+        link.style.padding = "8px 12px";
+        link.style.borderRadius = "5px";
+    });
 });
