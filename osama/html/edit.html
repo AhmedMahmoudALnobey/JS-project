@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/edit.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Edit Profile</h1>
+        
+        <div id="edit-form-container">
+            <div class="profile-info">
+                <label>First Name:</label>
+                <input type="text" id="edit-fname" class="edit-input">
+            </div>
+            <div class="profile-info">
+                <label>Last Name:</label>
+                <input type="text" id="edit-lname" class="edit-input">
+            </div>
+            <div class="profile-info">
+                <label>Username:</label>
+                <input type="text" id="edit-username" class="edit-input">
+            </div>
+            <div class="profile-info">
+                <label>Email:</label>
+                <input type="email" id="edit-email" class="edit-input">
+            </div>
+            <div class="profile-info">
+                <label>Track:</label>
+                <input type="text" id="edit-track" class="edit-input">
+            </div>
+            
+            <div class="button-group">
+                <button id="save-profile">Save Changes</button>
+                <button id="cancel-edit" onclick="window.location.href='StudentProfile.html'">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/edit.js"></script>
+</body>
+</html>

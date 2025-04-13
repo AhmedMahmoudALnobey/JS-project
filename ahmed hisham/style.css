@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'customFont';
+    src: url(font/Circular\ Std\ Font.otf);
+}
+
+html {
+    font-family: customFont;
+    background-color: #f4f4f4;
+
+}
+
+/* <----nav bar style---> */
+nav {
+    background-color: #8b2ef5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 50px;
+}
+
+nav a {
+    font-size: 24px;
+    font-weight: 500;
+    color: #f4f4f4;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0px 10px;
+
+}
+
+.logo {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+/* <----main structure---> */
+main {
+    display: flex;
+    height: 85vh;
+
+}
+
+.slagon {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* <----image style---> */
+
+.slagon .images {
+
+    width: 50%;
+    border-radius: 40%;
+    animation: up-down 1s infinite alternate;
+
+}
+
+.slagon .images:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes up-down {
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+/* <----form---> */
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.forms form {
+    /* background-color: aqua; */
+    width: 50%;
+
+}
+
+.forms {
+    /* background-color: green; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 25px auto;
+    border-bottom: 1px solid #8b2ef5;
+    padding: 10px 0px 5px;
+    /* display: flex; */
+    /* background-color: yellow; */
+}
+
+.input-box input {
+
+    width: 100%;
+    
+    border: none;
+    outline: none;
+    color: #8b2ef5;
+    font-size: 16px;
+    padding-left: 25px;
+    background-color: transparent;
+    /* background-color: blue; */
+
+}
+
+.select-box select {
+    color: #8b2ef5;
+    padding: 10px 0px;
+    width: 100%;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.select-box {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    position: absolute;
+    top: 6px;
+}
+
+.icon i {
+    color: #8b2ef5;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+#submit , #login-btn{
+    font-size: 18px;
+    padding: 10px 10px;
+    margin-top: 15px;
+    border-radius: 50px;
+    border: none;
+    background-color: #8b2ef5;
+    color: #f4f4f4;
+}
+#login-btn{
+    width: fit-content;
+    padding: 15px 25px;
+}
+
+.error{
+    color:red;
+    font-size: 24px;
+    position: absolute;
+    bottom: 101%;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page </title>
+    <link rel="stylesheet" href="../css/studentStyle.css">
+</head>
+<body>
+
+    <div class="profile-container">
+
+        <h1> My Profile </h1>
+
+        <div id="welcome-div">
+            <!-- <h2 id="welcome-msg"> Welcome Back </h2> -->
+        </div>
+
+        <div class="profile-image-div">
+             <img src="../images/male green.png" alt="" id="profile-image" > 
+             <input type="file" id="profile-picture-input" accept="image/*" style="display: none;">
+             <button id="edit-profile-picture-btn"> Edit Profile Picture </button>
+        </div>
+
+        <div id="profile-info-container">
+            <div class="profile-info">
+                <label>Name:</label>
+                <span id="student-name"></span>
+            </div>
+            <div class="profile-info">
+                <label>UserName:</label>
+                <span id="user-name"></span>
+            </div>
+            <div class="profile-info">
+                <label>Email :</label>
+                <span id="student-email"></span>
+            </div>
+            <div class="profile-info">
+                <label> Track:</label>
+                <span id="student-track"></span>
+            </div>        
+            <div class="profile-info">
+                <label> Courses:</label>
+                <span id="student-courses"></span>
+            </div>
+            <div class="profile-info">
+                <label> Grades:</label>
+                <span id="student-grades"></span>
+            </div>
+    
+            <button id="edit-profile"> Edit Profile Information  </button>
+        </div>
+        
+    </div>
+
+
+    <script src="../JS/StudentProfile.js"></script>
+</body>
+</html>
